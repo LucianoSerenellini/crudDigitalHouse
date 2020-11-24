@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edición de Productos</title>
+  </head>
+  <body>
+    <h1>Edición de Productos</h1>
+
+    <form action="/productos/editar/:id" method="POST">
+        <input type="hidden" name="id" placeholder="id">
+        <input type="text" name="nombre" value="<%= productoEncontrado.nombre %>" placeholder="Ingresa el NOMBRE del producto">
+        <br>
+        <input type="text" name="precio" value="<%= productoEncontrado.precio %>" placeholder="Ingresa el PRECIO del producto">
+        <br>
+        <input type="text" name="descripción" value="<%= productoEncontrado.descripción %>"  placeholder="Ingresa la DESCRIPCIÓN del producto">
+        <br>
+        <input type="text" name="marca"  value="<%= productoEncontrado.marca %>"  placeholder="Ingresa la MARCA del producto">
+        <br>
+        <input type="text" name="stock"  value="<%= productoEncontrado.stock %>" placeholder="Ingresa el STOCK del producto">
+        <br>
+        <button type="submit"> EDITAR PRODUCTO</button>
+
+
+
+    </form>
+  </body>
+</html>
