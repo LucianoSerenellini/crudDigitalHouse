@@ -8,8 +8,8 @@
   <body>
     <h1>Edición de Productos</h1>
 
-    <form action="/productos/editar/:id" method="POST">
-        <input type="hidden" name="id" placeholder="id">
+    <form action="/productos/editar/<%= productoEncontrado.id %>" method="POST">
+        <input type="hidden" name="id" value="<%= productoEncontrado.id %>" placeholder="id" >
         <input type="text" name="nombre" value="<%= productoEncontrado.nombre %>" placeholder="Ingresa el NOMBRE del producto">
         <br>
         <input type="text" name="precio" value="<%= productoEncontrado.precio %>" placeholder="Ingresa el PRECIO del producto">

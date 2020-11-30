@@ -35,8 +35,10 @@ update : function (req, res, next){
     let idProducto = req.params.id;
     
      let editProducto = productos.map (function (producto) {
-         if (productos.id == idProducto) {
-             return req.body;
+         if (producto.id == idProducto) {
+             let productoEditado = req.body;
+             productoEditado.id = idProducto;
+             return productoEditado;
          }
          return producto;
      });
@@ -45,7 +47,7 @@ update : function (req, res, next){
      res.redirect ("/productos/lista");
 
 
-    },
+},
     eliminar : function (req,res,next) {
         let idProducto = req.params.id;
         let productosEliminados = productos.filter(function (producto) {;
@@ -56,7 +58,7 @@ update : function (req, res, next){
     fs.writeFileSync(__dirname + "/../database/productos.json", productosEliminadosJSON);
     res.redirect ("/productos/lista");
 
-   },
+},
 
    lista : function (req,res,next) {
        res.render ("lista",{productos});
